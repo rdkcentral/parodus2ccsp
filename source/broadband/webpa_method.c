@@ -409,7 +409,6 @@ static int parseOperatePayload(set_req_t *setReq,
                         WalError("Failed to convert params to RBUS input object\n");
                         *errorObj = buildErrorObject(METHOD_ERR_INTERNAL,
                                 "Failed to convert params to RBUS input object");
-                        WalInfo("parseOperatePayload: releasing tmpParams after jsonObjectToRbus failure\n");
                         rbusObject_Release(tmpParams);
                         cJSON_Delete(operateJson);
                         return -1;
@@ -427,7 +426,6 @@ static int parseOperatePayload(set_req_t *setReq,
                         WalError("Operate payload has invalid rspDestination\n");
                         *errorObj = buildErrorObject(METHOD_ERR_INVALID_REQUEST,
                                 "Operate payload has invalid rspDestination");
-                        WalInfo("parseOperatePayload: releasing tmpParams after invalid rspDestination\n");
                         rbusObject_Release(tmpParams);
                         cJSON_Delete(operateJson);
                         return -1;
@@ -439,7 +437,6 @@ static int parseOperatePayload(set_req_t *setReq,
                 }
         }
 
-        WalInfo("parseOperatePayload: handing off tmpParams ownership to caller via inParams\n");
         *inParams = tmpParams;
         cJSON_Delete(operateJson);
         return 0;
@@ -694,11 +691,9 @@ static int jsonScalarToRbusValue(cJSON *val, rbusValue_t *out)
         }
         else
         {
-                WalInfo("jsonScalarToRbusValue: unsupported JSON type, releasing tmp\n");
                 rbusValue_Release(tmp);
                 return -1;
         }
-        WalInfo("jsonScalarToRbusValue: handing off tmp ownership to caller via out\n");
         *out = tmp;
         return 0;
 }
@@ -730,11 +725,9 @@ static int jsonLeafToRbusValue(cJSON *val, int wdmpType, rbusValue_t *out)
         {
                 /* rbusValue_SetFromString failed to parse the string into the
                  * requested rbus type; release and return -1 for error. */
-                WalInfo("jsonLeafToRbusValue: rbusValue_SetFromString failed, releasing tmp\n");
                 rbusValue_Release(tmp);
                 return -1;
         }
-        WalInfo("jsonLeafToRbusValue: handing off tmp ownership to caller via out\n");
         *out = tmp;
         return 0;
 }
