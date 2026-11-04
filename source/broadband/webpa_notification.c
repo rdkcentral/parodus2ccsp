@@ -180,10 +180,12 @@ const char * notifyparameters[]={
 "Device.NAT.X_CISCO_COM_DMZ.InternalIP",
 "Device.NAT.X_CISCO_COM_DMZ.IPv6Host",
 "Device.NAT.X_Comcast_com_EnablePortMapping",
+#ifndef MODEM_ONLY_SUPPORT
 "Device.DeviceInfo.X_RDKCENTRAL-COM_xOpsDeviceMgmt.Mesh.Enable",
 "Device.DeviceInfo.X_RDKCENTRAL-COM_DeviceFingerPrint.Enable",
 "Device.DeviceInfo.X_RDKCENTRAL-COM_RFC.Feature.PrivacyProtection.Enable",
 "Device.DeviceInfo.X_RDKCENTRAL-COM_PrivacyProtection.Activate",
+#endif
 "Device.DeviceInfo.X_RDKCENTRAL-COM_CloudUIEnable",
 #ifndef _CBR_PRODUCT_REQ_
 "Device.DeviceInfo.X_RDKCENTRAL-COM_AkerEnable",
@@ -269,8 +271,10 @@ const char * notifyparameters[]={
 "Device.WiFi.Radio.10200.OperatingChannelBandwidth",
 #endif
 /* Always keep AdvancedSecurity parameters as the last parameters in notify list as these have to be removed if cujo/fp is not enabled. */
+#ifndef MODEM_ONLY_SUPPORT
 "Device.DeviceInfo.X_RDKCENTRAL-COM_AdvancedSecurity.SafeBrowsing.Enable",
 "Device.DeviceInfo.X_RDKCENTRAL-COM_AdvancedSecurity.Softflowd.Enable"
+#endif
 };
 /*----------------------------------------------------------------------------*/
 /*                             Function Prototypes                            */
