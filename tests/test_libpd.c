@@ -249,7 +249,7 @@ void test_parallelProcessTask()
     msg_tmp->u.req.transaction_uuid = strdup("RYjWZTaP4TTTkZ6HhwjGLA");
     msg_tmp->u.req.headers->headers[0] = strdup("123");
     msg_tmp->u.req.headers->headers[1] = strdup("xyz");  
-    msg_tmp->u.req.source = strdup("dns:uvxyz.webpa.comcast.net");
+    msg_tmp->u.req.source = strdup("dns:uvxyz.webpa.example.net");
     msg_tmp->u.req.dest = strdup("mac:dcebxxxxxxxx/config");
     will_return(libparodus_receive, (intptr_t)0);
     expect_function_call(libparodus_receive);  
