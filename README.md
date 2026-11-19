@@ -1,5 +1,3 @@
-[![codecov.io](http://codecov.io/github/rdkcentral/parodus2ccsp/coverage.svg?branch=master)](http://codecov.io/github/rdkcentral/parodus2ccsp?branch=master)
-[![Coverity](https://img.shields.io/coverity/scan/16783.svg)](https://scan.coverity.com/projects/comcast-parodus2ccsp)
 [![Apache V2 License](http://img.shields.io/badge/license-Apache%20V2-blue.svg)](https://github.com/rdkcentral/parodus2ccsp/blob/master/LICENSE)
 
 ## Origin
