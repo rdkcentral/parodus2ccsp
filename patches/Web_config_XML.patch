@@ -1,3 +1,6 @@
+Source: COMCAST
+Upstream-Status: Pending
+Notice: Code in patch files takes the license of the source which is being patched.
 --- arch/intel_usg/boards/rdkb_atom/config/comcast/WebpaAgent.xml	2019-06-05 21:49:39.180115700 +0000
 +++ arch/intel_usg/boards/rdkb_atom/config/comcast/WebpaAgent.xml	2019-06-05 21:44:10.671983701 +0000
 @@ -80,5 +80,41 @@
