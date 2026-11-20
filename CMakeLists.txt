@@ -119,7 +119,7 @@ add_dependencies(libcJSON cJSON)
 #-------------------------------------------------------------------------------
 ExternalProject_Add(cimplog
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/cimplog
-    GIT_REPOSITORY https://github.com/Comcast/cimplog.git
+    GIT_REPOSITORY https://github.com/rdkcentral/cimplog.git
     GIT_TAG "1.0.2"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR}
 )
@@ -130,7 +130,7 @@ add_dependencies(libcimplog cimplog)
 #-------------------------------------------------------------------------------
 ExternalProject_Add(trower-base64
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/trower-base64
-    GIT_REPOSITORY https://github.com/Comcast/trower-base64.git
+    GIT_REPOSITORY https://github.com/rdkcentral/trower-base64.git
     GIT_TAG "fbb9440ae2bc1118866baefcea7ff814f16613dd"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} -DBUILD_TESTING=OFF
 )
@@ -185,7 +185,7 @@ add_dependencies(libcurl curl)
 #-------------------------------------------------------------------------------
 ExternalProject_Add(webcfg
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/webcfg
-    GIT_REPOSITORY https://github.com/Comcast/webcfg.git
+    GIT_REPOSITORY https://github.com/rdkcentral/webcfg.git
     GIT_TAG "c227bfa1e129404f21fa0272f411c7a472a0f237"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR}
                   -DBUILD_TESTING=OFF
@@ -225,7 +225,7 @@ add_dependencies(libmsgpack msgpack)
 ExternalProject_Add(wrp-c
 	DEPENDS trower-base64 msgpack cimplog
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/wrp-c
-    GIT_REPOSITORY https://github.com/Comcast/wrp-c.git
+    GIT_REPOSITORY https://github.com/rdkcentral/wrp-c.git
     GIT_TAG "5df89e383d7228150fbfbf127182d86379070930"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR}
                   -DMSGPACK_ENABLE_CXX=OFF
@@ -243,7 +243,7 @@ add_dependencies(libwrp-c wrp-c)
 ExternalProject_Add(libparodus
     DEPENDS trower-base64 msgpack nanomsg wrp-c
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/libparodus
-    GIT_REPOSITORY https://github.com/Comcast/libparodus.git
+    GIT_REPOSITORY https://github.com/rdkcentral/libparodus.git
     GIT_TAG "fcef57c79dcf9d2576aff481f1a61fe71ae93813"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR}
                   -DMAIN_PROJ_BUILD=ON
